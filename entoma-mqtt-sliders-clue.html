@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Mqtt Slider</title>
+</head>
+
+<style>
+    body {
+        background-image: url('https://image.freepik.com/free-vector/abstract-white-shapes-background_79603-1362.jpg');
+        background-color:black;
+        background-repeat: no-repeat;
+        background-size: cover;
+        ;
+    }
+
+    .card {
+        box-shadow: rgba(0, 0, 0, 1) 0px 10px 30px;
+    }
+    .navbar{
+        box-shadow: rgba(0,0,0,1)0px 0px 10px;;
+    }
+    #div :hover{
+        background-color: aquamarine;
+    }
+
+    
+</style>
+
+<body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="container">
+            <span class="navbar-brand mb-2 h1"><img src="slider.gif" alt="" style="margin-left:450px"></span>
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12 mt-5 d-flex ">
+                <!-- Accelerometer -->
+
+                <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                   
+                    <input type="range" min="-55" max="120" value="0" class=" slider" id="X-Accelerometer"
+                        onmouseup="publishFunction()"><br><br>
+                    <p>X-Accelerometer: <span id="X-Accelerometervalue"></span></p>
+                </div>
+
+                <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Accelerometer"><br><br>
+                    <p>Y-Accelerometer: <span id="Y-Accelerometervalue"></span></p>
+                </div>
+
+                <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Accelerometer"><br><br>
+                    <p>Z-Accelerometer: <span id="Z-Accelerometervalue"></span></p>
+                </div>
+            </div>
+            <!-- Gyroscope -->
+
+            <div class="col-12 mt-5 d-flex ">
+                <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="X-Gyroscope"><br><br>
+                    <p>X-Gyroscope: <span id="X-Gyroscopevalue"></span></p>
+                </div>
+
+                <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Gyroscope"><br><br>
+                    <p>Y-Gyroscope: <span id="Y-Gyroscopevalue"></span></p>
+                </div>
+
+                <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Gyroscope"><br><br>
+                    <p>Z-Gyroscope: <span id="Z-Gyroscopevalue"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- Magnetic -->
+
+        <div class="col-12 mt-5 d-flex ">
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="-55" max="120" value="0" class="slider" id="X-Magnetic"><br><br>
+                <p>X-Magnetic: <span id="X-Magneticvalue"></span></p>
+            </div>
+
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Magnetic"><br><br>
+                <p>Y-Magnetic: <span id="Y-Magneticvalue"></span></p>
+            </div>
+
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Magnetic"><br><br>
+                <p>Z-Magnetic: <span id="Z-Magneticvalue"></span></p>
+            </div>
+        </div>
+
+        <!-- Pressure -->
+        <div class="col-12 mt-5 d-flex ">
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="800" max="1100" value="800" class="slider" id="Pressure"><br><br>
+                <p>Pressure: <span id="Pressurevalue"></span></p>
+            </div>
+            <!-- temperature -->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="-55" max="125" value="0" class="slider" id="Temperature"><br><br>
+                <p>Temperature: <span id="Temperaturevalue"></span></p>
+            </div>
+            <!-- Humidity -->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="0" max="100" value="0" class="slider" id="Humidity"><br><br>
+                <p>Humidity: <span id="Humidityvalue"></span></p>
+            </div>
+        </div>
+
+        <!-- Color -->
+        <div class="col-12 mt-5 d-flex ">
+            <!-- Red Color -->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="0" max="100" value="0" class="slider" id="red"><br><br>
+                <p>R-Color: <span id="redvalue"></span></p>
+            </div>
+            <!-- Green Color -->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="0" max="100" value="0" class="slider" id="green"><br><br>
+                <p>G-Color: <span id="greenvalue"></span></p>
+            </div>
+            <!-- Blue Color -->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                <input type="range" min="0" max="100" value="0" class="slider" id="blue"><br><br>
+                <p>B-Color: <span id="bluevalue"></span></p>
+            </div>
+        </div>
+
+
+        <!-- Promixity -->
+        <div class="col-12 mt-5 d-flex ">
+            <!-- promiximity -->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                 <input type="range" min="0" max="255" value="0" class="slider" id="proximity"><br><br>
+                <p>Proximity: <span id="proximityvalue"></span></p>
+            </div>
+            <!-- GIntenisity-->
+            <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
+                 <input type="range" min="0" max="100" value="0" class="slider" id="light"
+                    onmouseup="publishFunction()"><br><br>
+                <p>Light Intensity: <span id="lightvalue"></span></p>
+            </div>
+           
+        </div>
+
+    </div>
+    </div>
+    
+    <script src="./browserMqtt.js"></script>
+    <script src="./rubio-mqtt-sliders-clue.js"></script>
+</body>
+
+</html>
