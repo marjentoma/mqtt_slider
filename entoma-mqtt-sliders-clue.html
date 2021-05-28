@@ -46,7 +46,7 @@
 
 <body>
     <!-- As a heading -->
-    <nav class="navbar navbar-light bg-light p-3">
+   <nav class="navbar navbar-light bg-light p-3">
         <div class="container">
             <span class="navbar-brand mb-2 h1"><img src="slider.gif" alt="" style="margin-left:450px"></span>
         </div>
@@ -65,12 +65,12 @@
                 </div>
 
                 <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                    <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Accelerometer"><br><br>
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Accelerometer" onmouseup="publishFunction()"><br><br>
                     <p>Y-Accelerometer: <span id="Y-Accelerometervalue"></span></p>
                 </div>
 
                 <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                    <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Accelerometer"><br><br>
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Accelerometer" onmouseup="publishFunction()" ><br><br>
                     <p>Z-Accelerometer: <span id="Z-Accelerometervalue"></span></p>
                 </div>
             </div>
@@ -78,17 +78,17 @@
 
             <div class="col-12 mt-5 d-flex ">
                 <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                    <input type="range" min="-55" max="120" value="0" class="slider" id="X-Gyroscope"><br><br>
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="X-Gyroscope" onmouseup="publishFunction()"><br><br>
                     <p>X-Gyroscope: <span id="X-Gyroscopevalue"></span></p>
                 </div>
 
                 <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                    <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Gyroscope"><br><br>
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Gyroscope" onmouseup="publishFunction()"><br><br>
                     <p>Y-Gyroscope: <span id="Y-Gyroscopevalue"></span></p>
                 </div>
 
                 <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                    <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Gyroscope"><br><br>
+                    <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Gyroscope" onmouseup="publishFunction()"><br><br>
                     <p>Z-Gyroscope: <span id="Z-Gyroscopevalue"></span></p>
                 </div>
             </div>
@@ -97,17 +97,17 @@
 
         <div class="col-12 mt-5 d-flex ">
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="-55" max="120" value="0" class="slider" id="X-Magnetic"><br><br>
+                <input type="range" min="-55" max="120" value="0" class="slider" id="X-Magnetic" onmouseup="publishFunction()"><br><br>
                 <p>X-Magnetic: <span id="X-Magneticvalue"></span></p>
             </div>
 
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Magnetic"><br><br>
+                <input type="range" min="-55" max="120" value="0" class="slider" id="Y-Magnetic" onmouseup="publishFunction()"><br><br>
                 <p>Y-Magnetic: <span id="Y-Magneticvalue"></span></p>
             </div>
 
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Magnetic"><br><br>
+                <input type="range" min="-55" max="120" value="0" class="slider" id="Z-Magnetic" onmouseup="publishFunction()"><br><br>
                 <p>Z-Magnetic: <span id="Z-Magneticvalue"></span></p>
             </div>
         </div>
@@ -115,17 +115,17 @@
         <!-- Pressure -->
         <div class="col-12 mt-5 d-flex ">
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="800" max="1100" value="800" class="slider" id="Pressure"><br><br>
+                <input type="range" min="800" max="1100" value="800" class="slider" id="Pressure" onmouseup="publishFunction()"><br><br>
                 <p>Pressure: <span id="Pressurevalue"></span></p>
             </div>
             <!-- temperature -->
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="-55" max="125" value="0" class="slider" id="Temperature"><br><br>
+                <input type="range" min="-55" max="125" value="0" class="slider" id="Temperature" onmouseup="publishFunction()"><br><br>
                 <p>Temperature: <span id="Temperaturevalue"></span></p>
             </div>
             <!-- Humidity -->
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="0" max="100" value="0" class="slider" id="Humidity"><br><br>
+                <input type="range" min="0" max="100" value="0" class="slider" id="Humidity" onmouseup="publishFunction()"><br><br>
                 <p>Humidity: <span id="Humidityvalue"></span></p>
             </div>
         </div>
@@ -134,17 +134,17 @@
         <div class="col-12 mt-5 d-flex ">
             <!-- Red Color -->
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="0" max="100" value="0" class="slider" id="red"><br><br>
+                <input type="range" min="0" max="100" value="0" class="slider" id="red" onmouseup="publishFunction()"><br><br>
                 <p>R-Color: <span id="redvalue"></span></p>
             </div>
             <!-- Green Color -->
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="0" max="100" value="0" class="slider" id="green"><br><br>
+                <input type="range" min="0" max="100" value="0" class="slider" id="green" onmouseup="publishFunction()"><br><br>
                 <p>G-Color: <span id="greenvalue"></span></p>
             </div>
             <!-- Blue Color -->
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                <input type="range" min="0" max="100" value="0" class="slider" id="blue"><br><br>
+                <input type="range" min="0" max="100" value="0" class="slider" id="blue" onmouseup="publishFunction()"><br><br>
                 <p>B-Color: <span id="bluevalue"></span></p>
             </div>
         </div>
@@ -154,7 +154,7 @@
         <div class="col-12 mt-5 d-flex ">
             <!-- promiximity -->
             <div class="card w-50 align-items-center p-3 bg-dark text-light m-3">
-                 <input type="range" min="0" max="255" value="0" class="slider" id="proximity"><br><br>
+                 <input type="range" min="0" max="255" value="0" class="slider" id="proximity" onmouseup="publishFunction()"><br><br>
                 <p>Proximity: <span id="proximityvalue"></span></p>
             </div>
             <!-- GIntenisity-->
@@ -170,7 +170,7 @@
     </div>
     
     <script src="./browserMqtt.js"></script>
-    <script src="./rubio-mqtt-sliders-clue.js"></script>
+    <script src="./entoma-mqtt-sliders-clue.js"></script>
 </body>
 
 </html>
